@@ -43,10 +43,10 @@ public class SekolahPresenter implements MainContact.datapresenter{
     @Override
     public void editData(String jml_siswa, String jml_guru, String nama_sekolah, String alamat, int id, AppDatabase database) {
         final DataSekolah dataSekolah = new DataSekolah();
-        dataSekolah.setJml_siswa(jml_siswa);
-        dataSekolah.setJml_guru(jml_guru);
         dataSekolah.setNama_sekolah(nama_sekolah);
         dataSekolah.setAlamat(alamat);
+        dataSekolah.setJml_siswa(jml_siswa);
+        dataSekolah.setJml_guru(jml_guru);
         dataSekolah.setId(id);
         new EditData(database, dataSekolah).execute();
     }

@@ -40,26 +40,26 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final DataSekolah data = list.get(i);
-        viewHolder.TV_1.setText(data.getJml_siswa());
-        viewHolder.TV_2.setText(data.getJml_guru());
-        viewHolder.TV_3.setText(data.getNama_sekolah());
-        viewHolder.TV_4.setText(data.getAlamat());
+        viewHolder.tvNama.setText(data.getNama_sekolah());
+        viewHolder.tvAlamat.setText(data.getAlamat());
+        viewHolder.tvSiswa.setText(data.getJml_siswa());
+        viewHolder.tvGuru.setText(data.getJml_guru());
         viewHolder.id.setText(String.valueOf(data.getId()));
-        viewHolder.btn_1.setOnClickListener(new View.OnClickListener() {
+        viewHolder.btnHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 view.deleteData(data);
                 // return true;
             }
         });
-        viewHolder.btn_2.setOnClickListener(new View.OnClickListener() {
+        viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent x = new Intent(context, Edit_data.class);
-                x.putExtra("jml_siswa", data.getJml_siswa());
-                x.putExtra("jml_guru", data.getJml_guru());
                 x.putExtra("nama", data.getNama_sekolah());
                 x.putExtra("alamat", data.getAlamat());
+                x.putExtra("jml_siswa", data.getJml_siswa());
+                x.putExtra("jml_guru", data.getJml_guru());
                 x.putExtra("id", data.getId());
                 x.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(x);
@@ -74,17 +74,17 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView TV_1, TV_2, TV_3, TV_4,id;
-        Button btn_1, btn_2;
+        TextView tvNama, tvAlamat,tvSiswa, tvGuru, id;
+        Button btnHapus, btnEdit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            TV_1 = itemView.findViewById(R.id.tv_item_jml_siswa);
-            TV_2 = itemView.findViewById(R.id.tv_item_jml_guru);
-            TV_3 = itemView.findViewById(R.id.tv_item_nama_sekolah);
-            TV_4 = itemView.findViewById(R.id.tv_item_alamat);
-            btn_1 = itemView.findViewById(R.id.btn_hapus);
-            btn_2 = itemView.findViewById(R.id.btn_edit);
+            tvSiswa = itemView.findViewById(R.id.tv_item_jml_siswa);
+            tvGuru = itemView.findViewById(R.id.tv_item_jml_guru);
+            tvNama = itemView.findViewById(R.id.tv_item_nama_sekolah);
+            tvAlamat = itemView.findViewById(R.id.tv_item_alamat);
+            btnHapus = itemView.findViewById(R.id.btn_hapus);
+            btnEdit = itemView.findViewById(R.id.btn_edit);
             id = itemView.findViewById(R.id.tv_item_id);
         }
     }
