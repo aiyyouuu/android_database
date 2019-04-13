@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etNama, etAlamat, etSiswa, etGuru ;
     private Button btnSubmit, btnLihat;
     private String setNama, setAlamat, setSiswa,setGuru ;
-   
+
     AppDatabase appDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

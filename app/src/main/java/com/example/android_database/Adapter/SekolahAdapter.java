@@ -44,6 +44,7 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.ViewHold
         viewHolder.TV_2.setText(data.getJml_guru());
         viewHolder.TV_3.setText(data.getNama_sekolah());
         viewHolder.TV_4.setText(data.getAlamat());
+        viewHolder.id.setText(String.valueOf(data.getId()));
         viewHolder.btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +74,7 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView TV_1, TV_2, TV_3, TV_4;
+        TextView TV_1, TV_2, TV_3, TV_4,id;
         Button btn_1, btn_2;
 
         public ViewHolder(@NonNull View itemView) {
@@ -84,6 +85,7 @@ public class SekolahAdapter extends RecyclerView.Adapter<SekolahAdapter.ViewHold
             TV_4 = itemView.findViewById(R.id.tv_item_alamat);
             btn_1 = itemView.findViewById(R.id.btn_hapus);
             btn_2 = itemView.findViewById(R.id.btn_edit);
+            id = itemView.findViewById(R.id.tv_item_id);
         }
     }
 }

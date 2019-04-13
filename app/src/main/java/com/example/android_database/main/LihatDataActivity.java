@@ -51,6 +51,7 @@ public class LihatDataActivity extends AppCompatActivity implements MainContact.
         startActivity(new Intent(getApplicationContext(), LihatDataActivity.class));
     }
 
+
     @Override
     public void deleteData(final DataSekolah item) {
         AlertDialog.Builder builder;
